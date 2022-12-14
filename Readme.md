@@ -11,6 +11,10 @@
 
 ## Postgres
 
-- Access docker image ssh
-- `psql -U [POSTGRES_USERNAME]`
 - [Cheat sheet] (https://www.geeksforgeeks.org/postgresql-psql-commands/)
+- `psql -U [POSTGRES_USERNAME]`
+
+## MongoDB
+
+- https://www.mongodb.com/compatibility/docker
+- `docker run --name mongodb -d -p 27017:27017 mongo`
