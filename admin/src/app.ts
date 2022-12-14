@@ -52,6 +52,16 @@ const main = async () => {
         res.json(result)
     })
 
+    app.post('/api/products/:id/like',async(req: Request<{ id: number }, {}, {}>, res) => {
+        const product = await productRepository.findOneBy({ id: req.params.id })
+            
+        if (!product) 
+            return res.json({ message: 'Can not find product.' })
+
+        product.likes!++
+        const result = await productRepository.save(product)
+        res.send(result)
+    })
 
     app.listen(PORT, () => {
         console.log(`Lisetening to port: ${PORT}`)
